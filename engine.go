@@ -12,14 +12,7 @@ type Engine struct {
 	refresh  time.Duration
 }
 
-func New() *Engine {
-	return &Engine{
-		renderer: &monet.Renderer{},
-		refresh:  16 * time.Millisecond,
-	}
-}
-
-func (e *Engine) Run(root Node) error {
+func Run(root Node) error {
 	if err := root.Init(); err != nil {
 		return err
 	}
